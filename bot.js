@@ -306,26 +306,14 @@ client.on('message', message => {
      modlog2.send({embed:heroo});
  
  
- 
 });
  
 
 
- client.on('guildMemberAdd', member => {
-  const channel = member.guild.channels.find('name', 'welcome');
-  if (!channel) return;
-  let memberavatar = member.user.avatarURL
-  let embed = new Discord.RichEmbed()
-    .setColor('RANDOM')
-    .setThumbnail(memberavatar)
-    .addField('**Welcome**',`**[${member}]**`)
-    .addField('**u r member number**',`**[${member.guild.memberCount}]**`)
- 
-    channel.send({embed:embed});
-}
-);
 
- 
+
+
+
  client.on('guildMemberRemove', member => {
   const channel = member.guild.channels.find('name', 'welcome');
   if (!channel) return;
@@ -340,44 +328,7 @@ client.on('message', message => {
 }
 );
 
-
-
-
-
-    var prefix = "#";
-             client.on('message', message => {
-                if(message.content === prefix + "invite") {
-                    let embed = new Discord.RichEmbed ()
-                    embed.setTitle("**:arrow_right: للدخول لسيرفر الدعم الفني**")
-                    .setURL("https://discord.gg/HwMVt4J");
-
-                   message.channel.sendEmbed(embed);
-                  }
-});
-
-
- client.on('message', message => {
-    if (message.content.startsWith("#link")) {
  
-        message.channel.createInvite({
-        thing: true,
-        maxUses: 1,
-        maxAge: 86400
-    }).then(invite =>
-      message.author.sendMessage(invite.url)
-    )
-    const embed = new Discord.RichEmbed()
-        .setColor("RANDOM")
-        .setDescription("Done  🔗|🔗  on DM")
-      message.channel.sendEmbed(embed).then(message => {message.delete(10000)})
-              const Embed11 = new Discord.RichEmbed()
-        .setColor("RANDOM")
-        .setDescription("This link will stay with you 24 hours 🔗")
-      message.author.sendEmbed(Embed11)
-    }
-});
-
-
 
 
 
