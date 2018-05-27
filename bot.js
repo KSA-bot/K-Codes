@@ -175,28 +175,6 @@ message.channel.sendMessage({embed: {
 
  
  
- 
- 
-
-
-
-client.on('message', message => {
-         if (message.content === "#welcome") {
-             if(!message.channel.guild) return;
-                  if(!message.channel.guild) return message.reply('**sorry, This Command For Server **');        
-     if(!message.member.hasPermission('ADMINISTRATOR')) return message.reply('**You do not have premisson    **');
-                              if (!message.guild.member(client.user).hasPermission('ADMINISTRATOR')) return message.reply('**im Dont have premisson **');
-                                            message.channel.send('__**Done ✅**__')            
-message.guild.createChannel('welcome', 'text');
- 
- 
-}
- 
-});
-
-
-
-
 client.on('message', message => {
     if (message.content.startsWith("#avatar")) {
         var mentionned = message.mentions.users.first();
