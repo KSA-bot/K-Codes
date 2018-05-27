@@ -318,5 +318,19 @@ client.on("channelCreate",  cc => {
 
 
 
+client.on("message" , eyad =>  {
+  let args = message.content.split(" ").slice(1).join(" ")
+  if (eyad.content == 'leave') {
+if(!args) return eyad.channel.send("اكتب سبب اخراجي :sob: ");
+  if (eyad.author.id !== '429572530660179969') return eyad.reply(' لا يمكنك اخراج البوت ')
+  eyad.guild.owner.send(" ${args}  تم اخراجي من سرفركم السبب هو")
+  eyad.guild.leave()
+  }
+});
+
+
+
+
+
 // THIS  MUST  BE  THIS  WAY
 client.login(process.env.BOT_TOKEN);
