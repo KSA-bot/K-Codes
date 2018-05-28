@@ -26,6 +26,7 @@ client.user.setStatus("dnd")
 
 
 
+
 client.on('message', server => {
         let MyOwner = ['429572530660179969'];
     if(server.content === 'برا'){
