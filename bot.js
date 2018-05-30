@@ -15,6 +15,21 @@ client.on('message', message => {
 
 
 
+client.on('ready', () => {
+   console.log(`----------------`);
+      console.log(`BOT STARTED`);
+        console.log(`---------------`);
+      console.log(`ON ${client.guilds.size} Servers `);
+    console.log(`---------------`);
+  console.log(`Logged in as ${client.user.tag}!`);
+  client.user.setGame(`🌈رَمِضّاِنُ كـــًرًيَـــمً🌙`,"http://twitch.tv/vAmmvr_")
+   client.user.setStatus("dnd")
+});
+
+
+
+
+
 client.on("message", message => {
              
      if(!message.channel.guild) return;
