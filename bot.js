@@ -13,15 +13,17 @@ client.on('message', message => {
 
 
 
-client.on('ready', () => {
-  client.user.setGame('#help | #invite','https://www.twitch.tv/peery13');
-  console.log('---------------');
-  console.log(' Bot Is Online')
-  console.log('---------------')
+ 
+ client.on('ready', () => {
+   console.log(`----------------`);
+      console.log(`BOT STARTED`);
+        console.log(`---------------`);
+      console.log(`ON ${client.guilds.size} Servers `);
+    console.log(`---------------`);
+  console.log(`Logged in as ${client.user.tag}!`);
+  client.user.setGame(`in 1 server #help | #invite`,"http://twitch.tv/vAmmvr_")
+   client.user.setStatus("dnd")
 });
-    
- 
- 
  
    
 const devs = ['424241514072244226' , '' , '' , ''];
