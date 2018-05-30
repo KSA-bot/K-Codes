@@ -535,6 +535,60 @@ client.on("message", message => {
 
 
 
+cclient.on("message", message => {
+ if (message.content === "#help") {
+  const embed = new Discord.RichEmbed() 
+      .setColor("#ffff00")
+      .setThumbnail(message.author.avatarURL)
+      .setDescription(`
+.addField('     **#bc** ' ,' **لخاصية البرودكاست 📢** ')
+.addField('     **#id**  ' ,' **لظهور الايدي 👀** ')
+.addField('     **#ping** ' , '**لمعرفة بنق البوت 💡**') 
+.addField('     **#invite** ' , '**لدعوة البوت 📍**') 
+.addField('     **#support** ' ,' ** سيرفر الدعم الفني 📞**')
+.addField('     **#avatar** ' ,' **  للافاتار 💧 ** ')
+.addField('     **#roles** ' ,' **  للرتب الي بالسيرفر  ⭐** ')
+.addField('     **#server** ' ,' **  معلومات عن السيرفر  👑** ')
+.setColor('#7d2dbe')
+  message.channel.sendEmbed(embed);
+    }
+client.on('message', message => {
+            if (message.content.startsWith(prefix - "help")) {
+        message.react("🎮 اوامر الالعاب 🎮")
+     let embed = new Discord.RichEmbed()
+.setThumbnail(message.author.avatarURL)
+.addField('     **#مريم** ' ,' **لعبة مريم 👤** ')
+.addField('     **#كت تويت**  ' ,' **لعبة كت تويت🍂** ')
+.addField('     **#صراحة**  ' ,' **صراحة✍** ')
+.addField('     **#عقاب**  ' ,' **عقاب😱** ')
+.addField('     **#خواطر**  ' ,' **خواطر💔** ')
+.addField('     **#حب**  ' ,' **حب💖** ')
+.addField('     **#حكم**  ' ,' **حكم🤴** ')
+
+
+.setColor('#7d2dbe')
+  message.channel.sendEmbed(embed);
+    }
+client.on('message', message => {
+            if (message.content.startsWith(prefix - "help")) {
+        message.react(" 🍫الاوامرالاداره 🍫")
+.addField('     **#clear** ' ,' **  لمسح الشات مع الرقم 💭 ** ')
+.addField('     **#mute** ' ,' **  لعطاء الشخص ميوت كتابي  💭** ')
+.addField('     **#unmute** ' ,' **  لفك الميوت الكتابي 💭** ')
+.addField('     **#mutevoice** ' ,' **  لعطاء الشخص ميوت صوتي 🗣 ** ')
+.addField('     **#unmutevoice** ' ,' **  لفك ميوت صوتي 🗣 ** ')
+.addField('     **#move** ' ,' **  لفك ميوت صوتي 🗣 ** ')
+`)
+message.author.sendEmbed(embed)
+
+}
+}); 
+
+
+
+
+
+
  client.on('message' , message => {
 
     if (message.content === "#invite") {
