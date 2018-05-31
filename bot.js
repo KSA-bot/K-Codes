@@ -29,8 +29,7 @@ client.on('ready', () => {
 
 
 
-const { Client } = require('discord.js');
-const client = new Client();
+
 const prefix = '#'; 
 
 client.on('ready', () => {console.log('ready')});
