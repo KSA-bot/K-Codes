@@ -45,7 +45,7 @@ client.on('message', message => {
                 let roleRe = args.join(' ').replace(member, '').replace(args[0], '').replace('-', '').replace(' ', '');
                 console.log(roleRe);
                 let role1 = message.guild.roles.find('name', roleRe);
-                console.log(`hi`);
+                console.log(`.Pic`);
                 if(!role1) return message.reply(`الرتبة غير موجودة بالسيرفر تأكد من الاسم`);
                 message.guild.member(member).removeRole(role1.id);
             } else if(!role.startsWith('-')) {
@@ -57,7 +57,7 @@ client.on('message', message => {
                 message.reply(`يجب عليك كتابة اسم الرتبة`);
             } 
         }
- else if(args[0] == 'all') {
+ else if(args[0] == 'NRED') {
     if(role) {
     let role1 = message.guild.roles.find('name', role);
     if(!role1) return message.reply(`الرتبة غير موجودة بالسيرفر تأكد من الاسم`);
@@ -68,7 +68,7 @@ client.on('message', message => {
         msg.edit(`تم الانتهاء من الامر ${message.guild.members.size}`);
     });
 }
-} else if(args[0] == 'humans') {
+} else if(args[0] == '.YouTuber') {
     if(role) {
         let role1 = message.guild.roles.find('name', role);
         if(!role1) return message.reply(`الرتبة غير موجودة بالسيرفر تأكد من الاسم`);
@@ -79,7 +79,7 @@ client.on('message', message => {
             msg.edit(`تم الانتهاء من الامر ${message.guild.members.size}`);
         });
     }
-} else if(args[0] == 'bots') {
+} else if(args[0] == '.Muted') {
     if(role) {
         let role1 = message.guild.roles.find('name', role);
         if(!role1) return message.reply(`الرتبة غير موجودة بالسيرفر تأكد من الاسم`);
