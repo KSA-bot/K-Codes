@@ -333,8 +333,7 @@ client.on("message", message => {
 
 ^^support| القسم الثاني  الدعم الفني و المساعدة
 
-القسم الثالث مصمم البوت | <@ 429572530660179969>
-
+القسم الثالث مصمم البوت | ! Dobi The Moon ☾ 🍫#6666
 ● ▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬▬ ● 
 
 
@@ -393,7 +392,7 @@ client.on("message", message => {
 
 ^^support| القسم الثاني  الدعم الفني و المساعدة
 
-القسم الثالث مصمم البوت | <@ 429572530660179969>
+القسم الثالث مصمم البوت | ! Dobi The Moon ☾ 🍫#6666>
 
 
 
@@ -452,7 +451,7 @@ client.on("message", message => {
 
 ^^support| القسم الثاني  الدعم الفني و المساعدة
 
-القسم الثالث مصمم البوت | <@429572530660179969> 
+القسم الثالث مصمم البوت | ! Dobi The Moon ☾ 🍫#6666> 
 
 
 `)
@@ -783,13 +782,6 @@ client.on("guildCreate", guild => {
 
 
 
-
-  
-  
-client.on('ready', () => {
-   client.user.setGame(" ^^help | ^^invite ");
-}); 
-
 client.on("message", message => {
     var prefix = "^^";
             var args = message.content.substring(prefix.length).split(" ");
@@ -874,7 +866,7 @@ client.on('message', message => {
             if(!message.channel.guild) return;
 let args = message.content.split(' ').slice(1).join(' ');
 if (message.content.startsWith('^^bc-users')){
- if(!message.author.id === 'اي دي صاحب البوت') return;
+ if(!message.author.id === '429572530660179969') return;
 message.channel.sendMessage('جار ارسال الرسالة |:white_check_mark:')
 client.users.forEach(m =>{
 m.sendMessage(args)
