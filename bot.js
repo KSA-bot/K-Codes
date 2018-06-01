@@ -56,6 +56,19 @@ if (message.content.startsWith("-cv")) {
 
 
 
+client.on("guildCreate", guild => {
+client.channels.get("451975676375859200").send(`**BOT** has been **added** :white_check_mark: from this server **(${guild.name})** , Server Owner 👑 **(${guild.owner.user.username})**`)
+});
+
+client.on("guildDelete", guild => {
+client.channels.get("451975676375859200").send(`**BOT** has been **removed** :x: from this server **(${guild.name})** , Server Owner 👑 **(${guild.owner.user.username})**`)
+});
+
+
+
+
+
+
 client.on('message', message =>  {
   const prefix = "-"
 const linkreg = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/gi
