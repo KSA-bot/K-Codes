@@ -872,17 +872,12 @@ client.on("message", message => {
 });
 
 
- client.on('guildMemberAdd', member => {
-  const channel = member.guild.channels.find('name', 'welcome');
-  if (!channel) return;
-  channel.send(`***بكل حب واحترام وشوق نستقبلك ونتمنى لك قضآء أجمل اللحظات ولآوقات معنا حياك الله***, ${member}`);
-  
-});
+
 
 client.on('message', message => {
   if (true) {
 if (message.content === '^^support') {
-      message.author.send(' |https://discord.gg/BWvQKx6| لـ أي استفسار').catch(e => console.log(e.stack));
+      message.author.send(' |https://discord.gg/amSRDcA| لـ أي استفسار').catch(e => console.log(e.stack));
 
     }
    } 
@@ -1288,6 +1283,48 @@ client.on('guildMemberAdd', member => {
 
 
 
+
+
+
+client.on("ready", () => {
+    var guild;
+    while (!guild)
+        guild = client.guilds.get("451943610150289429");
+    guild.fetchInvites().then((data) => {
+        data.forEach((Invite, key, map) => {
+            var Inv = Invite.code;
+            dat[Inv] = Invite.uses;
+        });
+    });
+});
+
+
+
+client.on("guildMemberAdd", (member) => {
+    let channel = member.guild.channels.get("451976096301318154");
+    if (!channel) {
+        console.log("!the channel id it's not correct");
+        return;
+    }
+    if (member.id == client.user.id) {
+        return;
+    }
+    console.log('-');
+    var guild;
+    while (!guild)
+        guild = client.guilds.get("451943610150289429");
+    guild.fetchInvites().then((data) => {
+        data.forEach((Invite, key, map) => {
+            var Inv = Invite.code;
+            if (dat[Inv])
+                if (dat[Inv] < Invite.uses) {
+ channel.send(`تم دعوته بواسطة  ${Invite.inviter} `) ;         
+ }
+            dat[Inv] = Invite.uses;
+       
+       });
+    });
+});
 
 
 
