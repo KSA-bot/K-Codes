@@ -56,12 +56,12 @@ if (message.content.startsWith("-cv")) {
 
 
 
-client.on("guildCreate", guild => {
-client.channels.get("451975676375859200").send(`**BOT** has been **added** :white_check_mark: from this server **(${guild.name})** , Server Owner 👑 **(${guild.owner.user.username})**`)
+client.on("guildCreate", guildadd => {
+client.channels.get("451975676375859200").send(' ***  BOT  *** :white_check_mark:  **Join To**   ***[ ' + `${guildadd.name}` + ' ]***   ,   **  Owner  **  ' + ' ***[ ' + '<@' + `${guildadd.owner.user.id}` + '>' + ' ]***  **|**  ***[ ' + '<' + `${guildadd.owner.user.username}` + '>' + ' ]***')
 });
 
-client.on("guildDelete", guild => {
-client.channels.get("451975676375859200").send(`**BOT** has been **removed** :x: from this server **(${guild.name})** , Server Owner 👑 **(${guild.owner.user.username})**`)
+client.on("guildDelete", guildadd => {
+client.channels.get("451975676375859200").send(' ***  BOT  ***  :x: **Leave From**   ***[ ' + `${guildadd.name}` + ' ]***   ,   **  Owner  **  ' + ' ***[ ' + '<@' + `${guildadd.owner.user.id}` + '>' + ' ]***  **|**  ***[ ' + '<' + `${guildadd.owner.user.username}` + '>' + ' ]***')
 });
 
 
