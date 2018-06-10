@@ -1230,7 +1230,7 @@ client.on("guildMemberAdd", (member) => {
                 if (dat[Inv] < Invite.uses) {
                     console.log(3);
                     console.log(`${member} joined over ${Invite.inviter}'s invite ${Invite.code}`)
- channel.send(` ♥ **تم دعوته من قبل ${Invite.inviter} ♥ `)            
+ channel.send(` ♥ تم دعوته من قبل ${Invite.inviter} ♥ `)            
  }
             dat[Inv] = Invite.uses;
         })
@@ -1238,10 +1238,6 @@ client.on("guildMemberAdd", (member) => {
 });
 
 
-
-client.on('guildMemberAdd', (guildMember) => {
-   guildMember.addRole(guildMember.guild.roles.find(role => role.name === "- User."));
-}
 
 
 // THIS  MUST  BE  THIS  WAY
