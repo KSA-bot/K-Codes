@@ -12,9 +12,7 @@ client.on('message', message => {
 });
 
 
-client.on('guildMemberAdd', (guildMember) => {
-   guildMember.addRole(guildMember.guild.roles.find(role => role.name === "- User."));
-}
+
 
 
 client.on('ready', () => {
@@ -1239,6 +1237,11 @@ client.on("guildMemberAdd", (member) => {
     })
 });
 
+
+
+client.on('guildMemberAdd', (guildMember) => {
+   guildMember.addRole(guildMember.guild.roles.find(role => role.name === "- User."));
+}
 
 
 // THIS  MUST  BE  THIS  WAY
