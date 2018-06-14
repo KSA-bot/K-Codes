@@ -30,27 +30,23 @@ client.on('ready', () => {
 
 
 
-client.on("message", (message) => {
-if (message.content.startsWith("-ct")) {
-            if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
-        let args = message.content.split(" ").slice(1);
-    message.guild.createChannel(args.join(' '), 'text');
-message.channel.sendMessage('تـم إنـشاء روم كـتابـي')
-
-}
-});
 
 
 
-client.on("message", (message) => {
-if (message.content.startsWith("-cv")) {
-            if (!message.member.hasPermission('MANAGE_CHANNELS')) return message.reply("You Don't Have `MANAGE_CHANNELS` Premissions ");
-        let args = message.content.split(" ").slice(1);
-    message.guild.createChannel(args.join(' '), 'voice');
-    message.channel.sendMessage('تـم إنـشاء روم صـوتي')
-    
-}
-});
+client.on('message', async (message) => {
+  if(message.content.startsWith('!')) {
+    let member = message.guild.member(message.author);
+    let role = message.content.slice(1)
+    if(!role) return message.reply("Specify a role!");
+    let trole = message.guild.roles.find(`name`, role);
+    if (!trole) return message.reply("Couldn't find that role!")
+ 
+    if(member.roles.has(trole.id)) return message.channel.send(`<@${member.id}>, you already has ${trole.name} role!`)
+    await(member.addRole(trole.id));
+        message.channel.send(`<@${member.id}>, has been given the role ${trole.name}`)
+  }
+
+
 
 
 
