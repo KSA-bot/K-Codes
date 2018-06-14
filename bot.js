@@ -33,25 +33,6 @@ client.on('ready', () => {
 
 
 
-client.on('message', async (message) => {
-  if(message.content.startsWith('!')) {
-    let member = message.guild.member(message.author);
-    let role = message.content.slice(1)
-    if(!role) return message.reply("Specify a role!");
-    let trole = message.guild.roles.find(`name`, role);
-    if (!trole) return message.reply("Couldn't find that role!")
- 
-    if(member.roles.has(trole.id)) return message.channel.send(`<@${member.id}>, you already has ${trole.name} role!`)
-    await(member.addRole(trole.id));
-        message.channel.send(`<@${member.id}>, has been given the role ${trole.name}`)
-  }
-
-
-
-
-
-
-
 client.on("guildCreate", guildadd => {
 client.channels.get("451975676375859200").send(' ***  BOT  *** :white_check_mark:  **Join To**   ***[ ' + `${guildadd.name}` + ' ]***   ,   **  Owner  **  ' + ' ***[ ' + '<@' + `${guildadd.owner.user.id}` + '>' + ' ]***  **|**  ***[ ' + '<' + `${guildadd.owner.user.username}` + '>' + ' ]***')
 });
