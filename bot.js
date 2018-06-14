@@ -22,7 +22,7 @@ client.on('ready', () => {
       console.log(`ON ${client.guilds.size} Servers `);
     console.log(`---------------`);
   console.log(`Logged in as ${client.user.tag}!`);
-  client.user.setGame(`🌈رَمِضّاِنُ كـــًرًيَـــمً🌙|^^help`,"http://twitch.tv/vAmmvr_")
+  client.user.setGame(`🎆كل عام وانت بخير✨|^^help`,"http://twitch.tv/vAmmvr_")
    client.user.setStatus("dnd")
 });
 
