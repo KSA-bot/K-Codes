@@ -298,6 +298,8 @@ client.on("message", message => {
 👑^^kick 『لتعطي شخص كيك』
 👑^^clear 『لمسح الشات برقم』
 👑^^edit  『لتعديل رساله 』
+👑^^mute  『لعطاء الشخص ميوت كتابي』
+👑^^unmute  『لفك الميوت الكاتبي عن الشخص』
 👑^^ct  مـلاحظه: الاسم انت تختاره『لي انشاء روم كتابي』
 👑^^cv  مـلاحظه: الاسم انت تختاره『لي انشاء روم صوتي』
 👑^^delet  『كـود يحذف الـروم سواء صوتي او كتابي』
@@ -1133,7 +1135,7 @@ client.on('message', message => {
 
 
 client.on('message', eyad => {
-  if (eyad.content.startsWith('mute')) {
+  if (eyad.content.startsWith('^^mute')) {
 if (!eyad.member.hasPermission("MOVE_MEMBERS")) return eyad.channel.send("**انت لا تمتلك الخاصيه المطلوبه** | ❎ ");
 let men = eyad.mentions.users.first()
 let mas = eyad.author
@@ -1168,7 +1170,7 @@ eyad.channel.sendEmbed(Embed11).then(eyad => {eyad.delete(20000)})
 
 
 client.on('message', eyad => {
-  if (eyad.content.startsWith('unmute')) {
+  if (eyad.content.startsWith('^^unmute')) {
 if (!eyad.member.hasPermission("MOVE_MEMBERS")) return eyad.channel.send("**انت لا تمتلك الخاصيه المطلوبه** | ❎ ");
  let men = eyad.mentions.users.first()
  let mas = eyad.author
