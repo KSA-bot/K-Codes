@@ -46,26 +46,19 @@ client.channels.get("451975676375859200").send(' ***  BOT  ***  :x: **Leave From
 
 
 
-client.on('message', message =>  {
-  const prefix = "-"
-const linkreg = /https?:\/\/(www\.)?[-a-zA-Z0-9@:%._\+~#=]{2,256}\.[a-z]{2,6}\b([-a-zA-Z0-9@:%_\+.~#?&//=]*)/gi
-  if (message.content.startsWith(prefix+'تقديم'))
-      {
-          var members = []
-          let evidence = message.content.split(" ").slice(1,2).join(" ")
-          let reason = message.content.split(" ").slice(2).join(" ")
-          if (!reason) return message.reply(`**${prefix}apply [تقديمك] [رابط مقطعك]**`)
-          if(!evidence.match(linkreg)) return message.channel.send(`**${prefix}apply [تقديمك] [رابط مقطعك]**`)
-          if(!evidence) return message.reply(`راجاً ضع رابط مقطع لتقديمك`)
-          var embed = new Discord.RichEmbed()
-              .setTitle(`تقديم من ${message.author.username}`)
-              .addField(`التقديم`, "**"+ reason + "`*")
-              .addField(`رابط المقطع`, evidence)
-              .setColor(`GREEN`)
-              client.channels.get("451276878540439552").send(embed)
-              members.push(message.author.id);
-              message.channel.send(`${message.author.id} تم تقديم طلبك...`)
-          }  
+client.on('message', message => {
+    if (message.author.bot) return;
+    if(message.content == '^^member') {
+    const embed = new Discord.RichEmbed()
+    .addField(`حالة الأعضاء🔋`,'-',   true)
+.addField(`💚 اونلاين:   ${message.guild.members.filter(m=>m.presence.status == 'online').size}`,'-',   true)
+.addField(`❤ مشغول:     ${message.guild.members.filter(m=>m.presence.status == 'dnd').size}`,'-',   true)
+.addField(`💛 خامل:      ${message.guild.members.filter(m=>m.presence.status == 'idle').size}`,'-',   true)   
+.addField(`🖤 اوفلاين:   ${message.guild.members.filter(m=>m.presence.status == 'offline').size}`,'-',  true) 
+.addField(`💙   الكل:  ${message.guild.memberCount}`,'-',   true)         
+         message.channel.send({embed});
+
+    }
   });
 
 
